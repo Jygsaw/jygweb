@@ -4,9 +4,10 @@ var app = express();
 
 // configure express
 app.set('port', (process.env.PORT || 5000));
+app.use(express.static(__dirname + '/public'));
 
 // define routes
-app.get('/', function(req, res) {
+app.get('/world', function(req, res) {
   res.status(200).send("Hello, World!");
 });
 
